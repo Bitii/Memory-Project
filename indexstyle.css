@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #09273A;
+    background-image: url('kepek/hatterkep.jpg');
+    background-repeat: no-repeat; /* hogy ne ismétlődjön */
+    background-size: cover; /* hogy kitöltse a teljes háttérterületet */
+    background-position: center; 
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.1);
+	z-index: 1000; 
+}
+
+.logo img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#check {
+    display: none;
+}
+
+.burger-icon {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Oszlopos elrendezés */
+    justify-content: center; /* Vízszintesen középre igazítás */
+    align-items: center; /* Függőlegesen középre igazítás */
+    background-color: rgba(0, 0, 0, 0); /* Átlátszó háttér */
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 0; /* Módosítás: A bal és jobb padding 0-ra állítása */
+    min-width: 200px; /* Módosítás: Minimális szélesség beállítása */
+    border-radius: 50px; /* 50 pixeles sugarú kerekített keret */
+    margin: 20px; /* Külső margó a gombok között */
+    text-align: center; /* Szöveg középre igazítása */
+
+}
+
+.button:hover {
+    background-color: #fff; /* Háttérszín változás egér fölött */
+    color: #333;
+}
+
+
+@media (max-width: 769px) {
+    .logo img {
+        margin-right: 0;
+    }
+
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 87.34px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: center;
+	}
+	
+	nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-right: 0; 
+        margin-bottom: 20px;
+    }
+
+    .navbar a {
+		text-align: center;
+    }
+
+    #check:checked~.navbar {
+        display: flex;
+	}
+
+    .burger-icon {
+        display: inline-block;
+    }
+}
+
