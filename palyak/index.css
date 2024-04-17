@@ -78,3 +78,25 @@ overflow: hidden;
     font-family: "Rubik", sans-serif;
     font-weight: 500;
   }
+
+/* Animációs stílusok */
+.full-screen {
+  position: fixed;
+  animation: go-full-screen forwards 500ms ease-in-out;
+  inset: var(--inset);
+}
+
+.shrink-down {
+  animation: go-full-screen reverse backwards 500ms ease-in-out !important;
+}
+
+@keyframes go-full-screen {
+  from {
+    inset: var(--inset);
+  }
+  to {
+    height: 100%;
+    width: 100%;
+    inset: 0;
+  }
+}
