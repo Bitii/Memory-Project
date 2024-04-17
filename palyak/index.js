@@ -22,3 +22,38 @@ function handleScroll(event) {
 
 // Görgetés esemény figyelése
 window.addEventListener('wheel', handleScroll);
+
+const boxes = document.querySelectorAll(".image");
+const container = document.body; // Ha az egész testben szeretnéd megjeleníteni a teljes képernyőn, módosítsd a container-t a body-ra.
+
+const shrink = (e) => {
+  const el = e.target;
+  el.addEventListener("animationend", (e) => e.target.remove());
+  el.style.animation = 'none';
+  el.offsetHeight;
+  el.style.animation = '';
+  el.classList.add("shrink-down");
+}
+
+const toggleFullScreen = (e) => {
+  const {
+    top,
+    left,
+    width,
+    height
+  } = e.target.getBoundingClientRect();
+
+  let fullScreen = e.target.cloneNode(true);
+  fullScreen.style.setProperty("--inset", `${top}px auto auto ${left}px`);
+  fullScreen.style.width = `${width}px`; // Állítsd a szélességet a teljes képernyős méretre
+  fullScreen.style.height = `${height}px`; // Állítsd a magasságot a teljes képernyős méretre
+  fullScreen.style.objectPosition = 'center'; // Középre állítja a képet
+  fullScreen.classList.add("full-screen");
+  fullScreen.addEventListener("click", shrink);
+  container.appendChild(fullScreen);
+}
+
+
+boxes.forEach(box => {
+  box.addEventListener("click", toggleFullScreen);
+});
