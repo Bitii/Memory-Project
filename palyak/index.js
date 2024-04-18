@@ -23,16 +23,25 @@ function handleScroll(event) {
 // Görgetés esemény figyelése
 window.addEventListener('wheel', handleScroll);
 
-const boxes = document.querySelectorAll(".image");
-const container = document.body; // Ha az egész testben szeretnéd megjeleníteni a teljes képernyőn, módosítsd a container-t a body-ra.
+const createButton = () => {
+  const button = document.createElement("button");
+  button.textContent = "Játék indítása";
+  button.classList.add("btn");
+  document.body.appendChild(button);
+  return button;
+}
 
-const shrink = (e) => {
-  const el = e.target;
-  el.addEventListener("animationend", (e) => e.target.remove());
-  el.style.animation = 'none';
-  el.offsetHeight;
-  el.style.animation = '';
-  el.classList.add("shrink-down");
+const removeButton = (button) => {
+  if (button && button.parentNode) {
+    button.parentNode.removeChild(button);
+  }
+}
+
+const toggleButtonPosition = (button) => {
+  button.style.position = "fixed";
+  button.style.left = "50%";
+  button.style.top = "50%";
+  button.style.transform = "translate(-50%, -50%)";
 }
 
 const toggleFullScreen = (e) => {
@@ -43,17 +52,38 @@ const toggleFullScreen = (e) => {
     height
   } = e.target.getBoundingClientRect();
 
-  let fullScreen = e.target.cloneNode(true);
+  let fullScreen = e.currentTarget.cloneNode(true);
   fullScreen.style.setProperty("--inset", `${top}px auto auto ${left}px`);
-  fullScreen.style.width = `${width}px`; // Állítsd a szélességet a teljes képernyős méretre
-  fullScreen.style.height = `${height}px`; // Állítsd a magasságot a teljes képernyős méretre
-  fullScreen.style.objectPosition = 'center'; // Középre állítja a képet
+  fullScreen.style.width = `${width}px`;
+  fullScreen.style.height = `${height}px`;
+  fullScreen.style.objectPosition = 'center';
   fullScreen.classList.add("full-screen");
   fullScreen.addEventListener("click", shrink);
   container.appendChild(fullScreen);
+
+  const button = createButton();
+  toggleButtonPosition(button);
 }
 
+const shrink = (e) => {
+  const el = e.target;
+  el.addEventListener("animationend", (e) => e.target.remove());
+  el.style.animation = 'none';
+  el.offsetHeight;
+  el.style.animation = '';
+  el.classList.add("shrink-down");
+  
+  const button = document.querySelector(".btn");
+  if (button) {
+    removeButton(button); // A gomb eltávolítása
+  }
+}
+
+const boxes = document.querySelectorAll(".image");
+const container = document.body;
 
 boxes.forEach(box => {
   box.addEventListener("click", toggleFullScreen);
 });
+
+const images = document.querySelectorAll('.image');
