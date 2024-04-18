@@ -47,14 +47,11 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 24px;
-  border: 2px solid #fff;
-    /* Módosítás: Növeljük a paddinget mindkét irányban */
-  padding: 40px 80px;
-    /* Módosítás: Növeljük a betűméretet */
-  font-size: 56px;
-  
+  border: 2px solid #fff; /* Módosítás: Növeljük a paddinget mindkét irányban */
+  padding: 20px 40px; /* Módosítás: Növeljük a betűméretet */
+  font-size: 30px;
   min-width: 200px; /* Módosítás: Minimális szélesség beállítása */
-  border-radius: 80px; /* 50 pixeles sugarú kerekített keret */
+  border-radius: 60px; /* 50 pixeles sugarú kerekített keret */
   margin: 20px; /* Külső margó a gombok között */
   text-align: center; /* Szöveg középre igazítása */
   z-index: 1000;
@@ -65,7 +62,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: black;
 }
-
   
   /* -- YouTube Link Styles -- */
   
