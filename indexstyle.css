@@ -10,7 +10,7 @@ body {
     padding: 0;
     min-height: 100vh;
     background-color: #09273A;
-    background-image: url('kepek/hatterkep.jpg');
+    background-image: url('hatterkep.jpg');
     background-repeat: no-repeat; /* hogy ne ismétlődjön */
     background-size: cover; /* hogy kitöltse a teljes háttérterületet */
     background-position: center; 
