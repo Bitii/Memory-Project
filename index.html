@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memoria game</title>
     <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="menu.css">
+    
 </head>
 <body>
     <header class="header">
@@ -25,21 +27,25 @@
         </nav>
     </header>
 
-        <div class="button-container">    
-            <a href="#" class="button">Pályaválasztás</a>
-            <a href="#" class="button">Beállítások</a>
-            <a href="#" class="button">Fejlesztők</a>
-            <a href="#" class="button">Exit</a>
-        </div>
+    <div class="content">
+            <div class="button-container">    
+                <a href="#" class="button" id="boardChoice">Pályaválasztás</a>
+                <a href="#" class="button">Beállítások</a>
+                <a href="#" class="button">Fejlesztők</a>
+                <a href="#" class="button">Exit</a>
+            </div>
+    </div>
     
-
-
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0"></div>
 
     <div id="particles-js"></div>
+    <script src="indexjs.js"></script>
+    <script src="palyak/particles.js"></script>
+    <script src="palyak/particles.min.js"></script>
+    <script src="palyak/app.js"></script>
+    <script src="palyak/boardchoice.js"></script>
+   
 
-    <script src="js/particles.js"></script>
-    <script src="js/particles.min.js"></script>
-    <script src="js/app.js"></script>
 </body>
-</body>
+
 </html>
