@@ -1,4 +1,6 @@
+function initBoardChoice() {
 const track = document.getElementById("image-track");
+
 
 // A csúszka elmozdítása a görgetés irányának megfelelően
 function handleScroll(event) {
@@ -23,6 +25,7 @@ function handleScroll(event) {
 // Görgetés esemény figyelése
 window.addEventListener('wheel', handleScroll);
 
+
 const createButton = () => {
   const button = document.createElement("button");
   button.textContent = "Játék indítása";
@@ -44,6 +47,8 @@ const toggleButtonPosition = (button) => {
   button.style.transform = "translate(-50%, -50%)";
 }
 
+const isClick=false;
+
 const toggleFullScreen = (e) => {
   const {
     top,
@@ -63,6 +68,7 @@ const toggleFullScreen = (e) => {
 
   const button = createButton();
   toggleButtonPosition(button);
+  isClick=!isClick
 }
 
 const shrink = (e) => {
@@ -87,3 +93,4 @@ boxes.forEach(box => {
 });
 
 const images = document.querySelectorAll('.image');
+}
