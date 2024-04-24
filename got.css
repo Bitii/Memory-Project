@@ -9,12 +9,43 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("hatter.jpg");
+  background-image: url("https://lh3.googleusercontent.com/pw/AP1GczNu-htEEAcqjIDSZsIMgVcgkWzW2H4opLedO7NikTIQd5v75VFjuvGM3HA7fXvjY0P7adSiY9yFClLeJG4c2Bt0CaggomXJEirrft9PuOQi2qfpIcciMnjbXIH9HfOsnv8BpMAzPszRRS7NDK4jpG0=w1639-h922-s-no-gm?authuser=0");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+<<<<<<< HEAD:memoriajatek[got]/style.css
 .wrapper {
+=======
+#timer {
+    position: absolute;
+    top: 16%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #000;
+    height: auto;
+    padding: 2px 20px;
+    font-size: 25px;
+    background-color: #542424;
+    border-radius: 5px;
+    color: azure;
+
+}
+#resetButton{
+  position: absolute;
+  top: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px solid #000;
+  height: auto;
+  padding: 2px 20px;
+  font-size: 25px;
+  background-color: #542424;
+  border-radius: 5px;
+  color: azure;
+}
+.wrapper{
+>>>>>>> e5e0903f92890d9fe091dff3491f66307e68a423:got.css
   padding: 25px;
   border-radius: 10px;
   background: rgba(67, 58, 58, 0.208);
