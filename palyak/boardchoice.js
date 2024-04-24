@@ -43,7 +43,7 @@ function initBoardChoice() {
         document.body.appendChild(button);
         // A gombhoz eseményfigyelő hozzáadása
         button.addEventListener("click", () => {
-          window.location.href = `../memoriajatek[got]/${div.id}.html`;
+          window.location.href = `../${div.id}.html`;
         });
       });
     });
