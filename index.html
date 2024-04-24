@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memoria game</title>
-    <link rel="stylesheet" href="indexstyle.css">
-    <link rel="stylesheet" href="menu.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="indexstyle.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <a href="index.html"><img src="GTP logo.png" alt="logo"></a>
-        </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="burger-icon">&#9776;</label>
-        <nav class="navbar" id="main-navbar">
-            <ul>
-                <li><a href="index.html">Főoldal</a></li>
-                <li><a href="#">Játékszabály</a></li>
-                <li><a href="#">Pályaválasztás</a></li>
-                <li><a href="#">Beállítások</a></li>
-                <li><a href="#">Fejlesztők</a></li>
-                <li><a href="#">Exit</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <a href="index.html"><img src="GTP logo.png" alt="logo" /></a>
+      </div>
+      <input type="checkbox" id="check" />
+      <label for="check" class="burger-icon">&#9776;</label>
+      <nav class="navbar" id="main-navbar">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="#">Játékszabály</a></li>
+          <li><a href="#">Pályaválasztás</a></li>
+          <li><a href="#">Beállítások</a></li>
+          <li><a href="#">Fejlesztők</a></li>
+          <li><a href="#">Exit</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="content">
-            <div class="button-container">    
-                <a href="#" class="button" id="boardChoice">Pályaválasztás</a>
-                <a href="#" class="button">Beállítások</a>
-                <a href="#" class="button">Fejlesztők</a>
-                <a href="#" class="button">Exit</a>
-            </div>
+      <div class="button-container">
+        <a href="#" class="button" id="boardChoice">Pályaválasztás</a>
+        <a href="#" class="button">Beállítások</a>
+        <a href="#" class="button">Fejlesztők</a>
+        <a href="#" class="button">Exit</a>
+      </div>
     </div>
-    
+
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0"></div>
 
     <div id="particles-js"></div>
@@ -44,8 +43,5 @@
     <script src="palyak/particles.min.js"></script>
     <script src="palyak/app.js"></script>
     <script src="palyak/boardchoice.js"></script>
-   
-
-</body>
-
+  </body>
 </html>
