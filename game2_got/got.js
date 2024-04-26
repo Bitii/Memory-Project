@@ -108,22 +108,14 @@ pause.addEventListener("click", function () {
     audio.pause();
 });
 
-// Event listener for mute button
-pause.addEventListener("click", function() {
-    audio.muted = !audio.muted;
-    pause.classList.toggle("outlined");
-});
-
-// Event handler for when audio starts playing
+// play gomb megnyomásakor megjelenik a körvonal, pause gombról eltűnik
 audio.onplay = function() {
     play.classList.add("outlined");
     pause.classList.remove("outlined");
 };
 
-// Event handler for when audio is paused
+// pause gomb megnyomásakor megjelenik a körvonal, play gombról eltűnik
 audio.onpause = function() {
     play.classList.remove("outlined");
-    if (audio.muted) {
-        pause.classList.add("outlined");
-    }
+    pause.classList.add("outlined");
 };
