@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const borderChoice = document.getElementById("boardChoice");
+  const boardChoice = document.getElementById("boardChoice");
   const contentDiv = document.querySelector(".content");
 
   document.getElementById("boardChoice").addEventListener("click", function () {
