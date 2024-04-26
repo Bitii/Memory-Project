@@ -1,6 +1,9 @@
 const cards = document.querySelectorAll(".card");
 const resetButton = document.querySelector("#resetButton");
 const timerDisplay = document.querySelector("#timer");
+const audio = document.querySelector("#audio");
+const pause = document.querySelector("#pauseButton");
+const play = document.querySelector("#playButton");
 
 let matched = 0;
 let cardOne, cardTwo;
@@ -89,5 +92,38 @@ function resetGame() {
 
 resetButton.addEventListener("click", resetGame);
 
-
 document.addEventListener("DOMContentLoaded", shuffleCard);
+
+//play gomb alapértelmezett körvonal hozzáadása -> zene automatikus lejátszása miatt
+window.onload = function () {
+    play.classList.add("outlined");
+}
+
+// zene lejátszása és megállítása
+play.addEventListener("click", function () { 
+    audio.play();
+});
+
+pause.addEventListener("click", function () { 
+    audio.pause();
+});
+
+// Event listener for mute button
+pause.addEventListener("click", function() {
+    audio.muted = !audio.muted;
+    pause.classList.toggle("outlined");
+});
+
+// Event handler for when audio starts playing
+audio.onplay = function() {
+    play.classList.add("outlined");
+    pause.classList.remove("outlined");
+};
+
+// Event handler for when audio is paused
+audio.onpause = function() {
+    play.classList.remove("outlined");
+    if (audio.muted) {
+        pause.classList.add("outlined");
+    }
+};
