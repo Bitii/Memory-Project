@@ -49,6 +49,10 @@ function matchCards(img1, img2) {
         matched++;
         if (matched == 8) {
             stopTimer();
+            setTimeout(() => {
+                alert(`Gratulálok! A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!`);
+                resetGame();
+            }, 400);
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
