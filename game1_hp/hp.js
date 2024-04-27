@@ -55,7 +55,7 @@ function matchCards(img1, img2) {
             audio.pause();
             congratsAudio.play();
             congrats.style.display = "block";
-            congratsMsg.textContent = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!\nÚjraindításhoz nyomd meg a Reset gombot!`;
+            congratsMsg.innerHTML = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!<br>Újraindításhoz nyomd meg a Reset gombot!`;
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
