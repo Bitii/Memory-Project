@@ -222,3 +222,24 @@
   .outlined {
     outline: 2px solid #4CAF50;
   }
+
+#congrats {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#congrats h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#congrats p {
+  font-size: 18px;
+}

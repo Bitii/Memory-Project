@@ -4,6 +4,9 @@ const timerDisplay = document.querySelector("#timer");
 const audio = document.querySelector("#audio");
 const pause = document.querySelector("#pauseButton");
 const play = document.querySelector("#playButton");
+const congrats = document.querySelector("#congrats");
+const congratsMsg = document.querySelector("#congratsMsg");
+const congratsAudio = document.querySelector("#congratsAudio");
 
 let matched = 0;
 let cardOne, cardTwo;
@@ -49,10 +52,10 @@ function matchCards(img1, img2) {
         matched++;
         if (matched == 8) {
             stopTimer();
-            setTimeout(() => {
-                alert(`Gratulálok! A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!`);
-                resetGame();
-            }, 400);
+            audio.pause();
+            congratsAudio.play();
+            congrats.style.display = "block";
+            congratsMsg.textContent = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!\nÚjraindításhoz nyomd meg a Reset gombot!`;
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
@@ -96,6 +99,9 @@ function resetGame() {
 }
 
 resetButton.addEventListener("click", resetGame);
+resetButton.addEventListener("click", function () {
+    congrats.style.display = "none";
+});
 
 document.addEventListener("DOMContentLoaded", shuffleCard);
 
