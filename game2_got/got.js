@@ -100,6 +100,9 @@ function resetGame() {
 }
 
 resetButton.addEventListener("click", resetGame);
+resetButton.addEventListener("click", function () {
+  congrats.style.display = "none";
+});
 
 document.addEventListener("DOMContentLoaded", shuffleCard);
 
