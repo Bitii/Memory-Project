@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //sw
       "https://lh3.googleusercontent.com/pw/AP1GczNequYJOIlLRGCAWDNZQrEOcpVRMzqigE9fS0EsuYISxkD-nWXw8LylUEA3Rxdi2LUddXIEKO8uqCoQs6_PneNgo4szKiqWpF4U7Dls3c0MPXBIEvSY8SJrY4QenbGy-9OBgi4-lAu8BK8qkXdAyRQ=w1639-h922-s-no-gm?authuser=0",
       //gyuruk
-      "https://images.wallpapersden.com/image/download/the-lord-of-the-rings-rise-to-war-gaming-poster_bmVtaGeUmZqaraWkpJRobWllrWdma2U.jpg",
+      "https://lh3.googleusercontent.com/pw/AP1GczNZ2pMHcbjKd_IlyIFj6aHzxJ2EC4eG3q6K59Q2EQQX-j03DO-dXJeqF4lJ4FwunCnvkNJTCQ_4MwmzdFApLz69arttl-qMfeeGA4PWJ5wY96QT2rOtgevvPNa3cLodZS7XpKlJF7YHVcXwyHEzNJtq=w1475-h922-s-no-gm?authuser=0",
       //mesek
       "https://lh3.googleusercontent.com/pw/AP1GczODmERn-4GiyBmgfLFfNJxneiHnSPfUtMr2E-blLoktS0JbGUWUnA9C2as4SioXOGVdDOioGxgd5bSo_QW8yjtJOAcmVyvAOE0dshM--Iv5BGQXJLtSmnq4tRiV3cp5W185YNlIESB3TOD6xU7xs88=w1475-h922-s-no-gm?authuser=0",
       //piak
