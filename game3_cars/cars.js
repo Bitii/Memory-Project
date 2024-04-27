@@ -4,94 +4,99 @@ const timerDisplay = document.querySelector("#timer");
 const audio = document.querySelector("#audio");
 const pause = document.querySelector("#pauseButton");
 const play = document.querySelector("#playButton");
+const congrats = document.querySelector("#congrats");
+const congratsMsg = document.querySelector("#congratsMsg");
+const congratsAudio = document.querySelector("#congratsAudio");
 
 let matched = 0;
 let cardOne, cardTwo;
-let disableDeck = true; 
+let disableDeck = true;
 let startTime, elapsedTime, timerInterval;
 
 function startTimer() {
-    if (!startTime) {
-        startTime = Date.now();
-        timerInterval = setInterval(updateTimer, 1000);
-    }
+  if (!startTime) {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000);
+  }
 }
 
 function updateTimer() {
-    elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-    const minutes = Math.floor(elapsedTime / 60);
-    const seconds = elapsedTime % 60;
-    timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+  const minutes = Math.floor(elapsedTime / 60);
+  const seconds = elapsedTime % 60;
+  timerDisplay.textContent = `${minutes < 10 ? "0" : ""}${minutes}:${
+    seconds < 10 ? "0" : ""
+  }${seconds}`;
 }
 
 function stopTimer() {
-    clearInterval(timerInterval);
+  clearInterval(timerInterval);
 }
 
-function flipCard({target: clickedCard}) {
-    if (!disableDeck && cardOne !== clickedCard) {
-        clickedCard.classList.add("flip");
-        if (!cardOne) {
-            cardOne = clickedCard;
-            startTimer(); 
-            return;
-        }
-        cardTwo = clickedCard;
-        disableDeck = true;
-        let cardOneImg = cardOne.querySelector(".back-view img").src,
-        cardTwoImg = cardTwo.querySelector(".back-view img").src;
-        matchCards(cardOneImg, cardTwoImg);
+function flipCard({ target: clickedCard }) {
+  if (!disableDeck && cardOne !== clickedCard) {
+    clickedCard.classList.add("flip");
+    if (!cardOne) {
+      cardOne = clickedCard;
+      startTimer();
+      return;
     }
+    cardTwo = clickedCard;
+    disableDeck = true;
+    let cardOneImg = cardOne.querySelector(".back-view img").src,
+      cardTwoImg = cardTwo.querySelector(".back-view img").src;
+    matchCards(cardOneImg, cardTwoImg);
+  }
 }
 
 function matchCards(img1, img2) {
-    if (img1 === img2) {
-        matched++;
-        if (matched == 8) {
-            stopTimer();
-            setTimeout(() => {
-                alert(`Gratulálok! A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!`);
-                resetGame();
-            }, 400);
-        }
-        cardOne.removeEventListener("click", flipCard);
-        cardTwo.removeEventListener("click", flipCard);
-        cardOne = cardTwo = "";
-        disableDeck = false; 
-    } else {
-        setTimeout(() => {
-            cardOne.classList.add("shake");
-            cardTwo.classList.add("shake");
-        }, 400);
-
-        setTimeout(() => {
-            cardOne.classList.remove("shake", "flip");
-            cardTwo.classList.remove("shake", "flip");
-            cardOne = cardTwo = "";
-            disableDeck = false; 
-        }, 1200);
+  if (img1 === img2) {
+    matched++;
+    if (matched == 8) {
+      stopTimer();
+      audio.pause();
+      congratsAudio.play();
+      congrats.style.display = "block";
+      congratsMsg.innerHTML = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!<br>Újraindításhoz nyomd meg a Reset gombot!`;
     }
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    disableDeck = false;
+  } else {
+    setTimeout(() => {
+      cardOne.classList.add("shake");
+      cardTwo.classList.add("shake");
+    }, 400);
+
+    setTimeout(() => {
+      cardOne.classList.remove("shake", "flip");
+      cardTwo.classList.remove("shake", "flip");
+      cardOne = cardTwo = "";
+      disableDeck = false;
+    }, 1200);
+  }
 }
 
 function shuffleCard() {
-    matched = 0;
-    disableDeck = false;
-    cardOne = cardTwo = "";
-    startTime = null; 
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
-    arr.sort(() => Math.random() > 0.5 ? 1 : -1);
-    cards.forEach((card, i) => {
-        card.classList.remove("flip");
-        let imgTag = card.querySelector(".back-view img");
-        imgTag.src = `./game3_cars/cars_images/img-${arr[i]}.png`;
-        card.addEventListener("click", flipCard);
-    });
+  matched = 0;
+  disableDeck = false;
+  cardOne = cardTwo = "";
+  startTime = null;
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  cards.forEach((card, i) => {
+    card.classList.remove("flip");
+    let imgTag = card.querySelector(".back-view img");
+    imgTag.src = `./game3_cars/cars_images/img-${arr[i]}.png`;
+    card.addEventListener("click", flipCard);
+  });
 }
 
 function resetGame() {
-    clearInterval(timerInterval);
-    shuffleCard();
-    timerDisplay.textContent = "00:00"; 
+  clearInterval(timerInterval);
+  shuffleCard();
+  timerDisplay.textContent = "00:00";
 }
 
 resetButton.addEventListener("click", resetGame);
@@ -100,26 +105,26 @@ document.addEventListener("DOMContentLoaded", shuffleCard);
 
 //play gomb alapértelmezett körvonal hozzáadása -> zene automatikus lejátszása miatt
 window.onload = function () {
-    play.classList.add("outlined");
-}
+  play.classList.add("outlined");
+};
 
 // zene lejátszása és megállítása
-play.addEventListener("click", function () { 
-    audio.play();
+play.addEventListener("click", function () {
+  audio.play();
 });
 
-pause.addEventListener("click", function () { 
-    audio.pause();
+pause.addEventListener("click", function () {
+  audio.pause();
 });
 
 // play gomb megnyomásakor megjelenik a körvonal, pause gombról eltűnik
-audio.onplay = function() {
-    play.classList.add("outlined");
-    pause.classList.remove("outlined");
+audio.onplay = function () {
+  play.classList.add("outlined");
+  pause.classList.remove("outlined");
 };
 
 // pause gomb megnyomásakor megjelenik a körvonal, play gombról eltűnik
-audio.onpause = function() {
-    play.classList.remove("outlined");
-    pause.classList.add("outlined");
+audio.onpause = function () {
+  play.classList.remove("outlined");
+  pause.classList.add("outlined");
 };
