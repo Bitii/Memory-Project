@@ -55,7 +55,7 @@ function matchCards(img1, img2) {
             audio.pause();
             congratsAudio.play();
             congrats.style.display = "block";
-            congratsMsg.innerHTML = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!<br>Újraindításhoz nyomd meg a Reset gombot!`;
+            congratsMsg.textContent = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!\nÚjraindításhoz nyomd meg a Reset gombot!`;
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
@@ -95,7 +95,7 @@ function shuffleCard() {
 function resetGame() {
     clearInterval(timerInterval);
     shuffleCard();
-    timerDisplay.innerHTML = "00:00"; 
+    timerDisplay.textContent = "00:00"; 
 }
 
 resetButton.addEventListener("click", resetGame);
