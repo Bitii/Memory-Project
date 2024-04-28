@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //piak
       "https://lh3.googleusercontent.com/pw/AP1GczNR-EkMwanlLZKD7Tp8G18kjC8w9tLjc440QoHXm_tUyMctMJT9snNs7XKtdEWcs2eXmmvrf7H43rJyDfcg95lJUJBSRFPAMdqMLyTC3jXbhItujFLfaP0tH9OnGL3ugxPvZjNEONsKaTEytvp9Kpoy=w1388-h922-s-no-gm?authuser=0",
       //allatok
-      "https://lh3.googleusercontent.com/pw/AP1GczNsZe1G2ejZkSNTCaW2zgDGIXNjXY858Hq15TQsbUHV_v7-L7qeA8ELfa0UzGm6MBE4cVI-TOGOrgp86uuiOGB70kT7GqZFiIO7M7F8ehrSQaVWD4Md3bho4qvYGYdt1BGt6xg-fRLeX3ioSNPJP_I=w1639-h922-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczOF_xY9JWontaOxpeRmCk9oSddAOOxJYoM9iHCbyfQlZFHnrt2IwKl8XPSzqlTotpgfxJty4qj0GdZ2R4o1RzX1DsLBG-NmlRY4iOKd3GCYtmqGZnNBbgbuQ9293pJBSksLJE3GrTy4vACz1RnsMCuV=w1639-h922-s-no-gm?authuser=0",
     ];
 
     const imageTrackDiv = document.getElementById("image-track");
