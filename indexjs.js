@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //mesek
       "https://lh3.googleusercontent.com/pw/AP1GczODmERn-4GiyBmgfLFfNJxneiHnSPfUtMr2E-blLoktS0JbGUWUnA9C2as4SioXOGVdDOioGxgd5bSo_QW8yjtJOAcmVyvAOE0dshM--Iv5BGQXJLtSmnq4tRiV3cp5W185YNlIESB3TOD6xU7xs88=w1475-h922-s-no-gm?authuser=0",
       //piak
-      "https://lh3.googleusercontent.com/pw/AP1GczObXfDoPoSONoIyLkELq8m4Wo9wVWIaREqGeI3vi1V3OTmPv4aThBxNK9qKWy4ZgfrVHMVZOqZS09bY3Bucs9bjUdJG3G45MaPyqMQa8Ov1QRw4RDKh_s3iBxbGA7xW4mss1to0WLceaGDHd5ihypk=w1383-h922-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczNR-EkMwanlLZKD7Tp8G18kjC8w9tLjc440QoHXm_tUyMctMJT9snNs7XKtdEWcs2eXmmvrf7H43rJyDfcg95lJUJBSRFPAMdqMLyTC3jXbhItujFLfaP0tH9OnGL3ugxPvZjNEONsKaTEytvp9Kpoy=w1388-h922-s-no-gm?authuser=0",
       //allatok
       "https://lh3.googleusercontent.com/pw/AP1GczNsZe1G2ejZkSNTCaW2zgDGIXNjXY858Hq15TQsbUHV_v7-L7qeA8ELfa0UzGm6MBE4cVI-TOGOrgp86uuiOGB70kT7GqZFiIO7M7F8ehrSQaVWD4Md3bho4qvYGYdt1BGt6xg-fRLeX3ioSNPJP_I=w1639-h922-s-no-gm?authuser=0",
     ];
