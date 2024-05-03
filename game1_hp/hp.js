@@ -83,12 +83,45 @@ function shuffleCard() {
   disableDeck = false;
   cardOne = cardTwo = "";
   startTime = null;
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
-  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  let links = [
+    //Link1
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573139775569/img-1.png?ex=66363fe5&is=6634ee65&hm=095df20f5b8cd7464067b024045243798c713e8316958030fcafaafa11d18dcb&=&format=webp&quality=lossless&width=355&height=473",
+    //Link2
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573445693542/img-2.png?ex=66363fe5&is=6634ee65&hm=1d5cd224b8ee31bf9c84075d2638638b58e456583b9c3ea06facff1d5a7f5671&=&format=webp&quality=lossless&width=398&height=473",
+    //Link3
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573705875486/img-3.png?ex=66363fe5&is=6634ee65&hm=c2ebc90c6c65c6d6bdada848f85a85ba0ad12d0aa931b5540b3003545a3c9630&=&format=webp&quality=lossless&width=424&height=473",
+    //Link4
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573974442046/img-4.png?ex=66363fe5&is=6634ee65&hm=e38d7de10718c80a7c3e757250aaa660c0d20bbc071e94c649601f4f918212b8&=&format=webp&quality=lossless&width=473&height=473",
+    //Link5
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574221639680/img-5.png?ex=66363fe5&is=6634ee65&hm=b676679618d93c184538f846a2513cd86811931afd04e241a8ed9e8631a3b118&=&format=webp&quality=lossless&width=394&height=473",
+    //Link6
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574507118632/img-6.png?ex=66363fe5&is=6634ee65&hm=5d3d041a1f9692131d3251a0b66e50b8c2dfb354c7a0423a43df7eb72211cb06&=&format=webp&quality=lossless&width=336&height=472",
+    //Link7
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574817230891/img-7.png?ex=66363fe5&is=6634ee65&hm=10742316b31750ac86fa01992786cb3c03a4c0f6b1fea45ec10c26a48d672477&=&format=webp&quality=lossless&width=473&height=473",
+    //Link8
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954575106773152/img-8.png?ex=66363fe5&is=6634ee65&hm=18e3bfb40b439348e39610d9c9c91c6e255a5a1809a8683dd736f92972bdefb8&=&format=webp&quality=lossless&width=355&height=473",
+    //Link1
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573139775569/img-1.png?ex=66363fe5&is=6634ee65&hm=095df20f5b8cd7464067b024045243798c713e8316958030fcafaafa11d18dcb&=&format=webp&quality=lossless&width=355&height=473",
+    //Link2
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573445693542/img-2.png?ex=66363fe5&is=6634ee65&hm=1d5cd224b8ee31bf9c84075d2638638b58e456583b9c3ea06facff1d5a7f5671&=&format=webp&quality=lossless&width=398&height=473",
+    //Link3
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573705875486/img-3.png?ex=66363fe5&is=6634ee65&hm=c2ebc90c6c65c6d6bdada848f85a85ba0ad12d0aa931b5540b3003545a3c9630&=&format=webp&quality=lossless&width=424&height=473",
+    //Link4
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954573974442046/img-4.png?ex=66363fe5&is=6634ee65&hm=e38d7de10718c80a7c3e757250aaa660c0d20bbc071e94c649601f4f918212b8&=&format=webp&quality=lossless&width=473&height=473",
+    //Link5
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574221639680/img-5.png?ex=66363fe5&is=6634ee65&hm=b676679618d93c184538f846a2513cd86811931afd04e241a8ed9e8631a3b118&=&format=webp&quality=lossless&width=394&height=473",
+    //Link6
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574507118632/img-6.png?ex=66363fe5&is=6634ee65&hm=5d3d041a1f9692131d3251a0b66e50b8c2dfb354c7a0423a43df7eb72211cb06&=&format=webp&quality=lossless&width=336&height=472",
+    //Link7
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954574817230891/img-7.png?ex=66363fe5&is=6634ee65&hm=10742316b31750ac86fa01992786cb3c03a4c0f6b1fea45ec10c26a48d672477&=&format=webp&quality=lossless&width=473&height=473",
+    //Link8
+    "https://media.discordapp.net/attachments/1229720027574304900/1235954575106773152/img-8.png?ex=66363fe5&is=6634ee65&hm=18e3bfb40b439348e39610d9c9c91c6e255a5a1809a8683dd736f92972bdefb8&=&format=webp&quality=lossless&width=355&height=473"
+  ];
+  links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove("flip");
     let imgTag = card.querySelector(".back-view img");
-    imgTag.src = `./game1_hp/hp_images/img-${arr[i]}.png`;
+    imgTag.src = links[i];
 
     card.addEventListener("click", flipCard);
   });
