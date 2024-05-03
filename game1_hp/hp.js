@@ -85,37 +85,37 @@ function shuffleCard() {
   startTime = null;
   let links = [
    //Link1
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979454803607602/img-1.png?ex=66365711&is=66350591&hm=256a2ca50d43744a06b2258f49a078936f5e4a384d9f2f6c78f90cc7b9f10db1&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573139775569/img-1.png?ex=66363fe5&is=6634ee65&hm=095df20f5b8cd7464067b024045243798c713e8316958030fcafaafa11d18dcb&=&format=webp&quality=lossless&width=355&height=473",
       //Link2
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455131025490/img-2.png?ex=66365711&is=66350591&hm=9ad2304a4885405f106d3d59c70324b88ce7d49670b39133535c374254280a6d&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573445693542/img-2.png?ex=66363fe5&is=6634ee65&hm=1d5cd224b8ee31bf9c84075d2638638b58e456583b9c3ea06facff1d5a7f5671&=&format=webp&quality=lossless&width=398&height=473",
       //Link3
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455470768244/img-3.png?ex=66365711&is=66350591&hm=1d1291a9509c3efcd6f937f166851d60afa527d6a485d192786d8ff89faf376a&=&format=webp&quality=lossless&width=341&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573705875486/img-3.png?ex=66363fe5&is=6634ee65&hm=c2ebc90c6c65c6d6bdada848f85a85ba0ad12d0aa931b5540b3003545a3c9630&=&format=webp&quality=lossless&width=424&height=473",
       //Link4
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455852183552/img-4.png?ex=66365711&is=66350591&hm=ce5a0a43f01bc85c0d9199f68e687345e0902227d83b1811550357c5ad2bba18&=&format=webp&quality=lossless&width=340&height=472",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573974442046/img-4.png?ex=66363fe5&is=6634ee65&hm=e38d7de10718c80a7c3e757250aaa660c0d20bbc071e94c649601f4f918212b8&=&format=webp&quality=lossless&width=473&height=473",
       //Link5
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979456196378666/img-5.png?ex=66365711&is=66350591&hm=88f2002ccfe564b47b13672ce7682581bc3c6a7c7b0783517396bb39a6f84722&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574221639680/img-5.png?ex=66363fe5&is=6634ee65&hm=b676679618d93c184538f846a2513cd86811931afd04e241a8ed9e8631a3b118&=&format=webp&quality=lossless&width=394&height=473",
       //Link6
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979456686850058/img-6.png?ex=66365711&is=66350591&hm=d07f2a530a6e3e7c967ae2dcdc9e8865f2c6d5a237b525c36722a3049cdb3da2&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574507118632/img-6.png?ex=66363fe5&is=6634ee65&hm=5d3d041a1f9692131d3251a0b66e50b8c2dfb354c7a0423a43df7eb72211cb06&=&format=webp&quality=lossless&width=336&height=472",
       //Link7
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979457022660730/img-7.png?ex=66365711&is=66350591&hm=5d4761bee366552b72bb8e23934d71abc80c22dcfbe2e40492f8b52bfd8e6fa5&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574817230891/img-7.png?ex=66363fe5&is=6634ee65&hm=10742316b31750ac86fa01992786cb3c03a4c0f6b1fea45ec10c26a48d672477&=&format=webp&quality=lossless&width=473&height=473",
       //Link8
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979457416659106/img-8.png?ex=66365712&is=66350592&hm=b2091d2b6e7d0bef10c9ac2f3f552a537ae4734cdf9df15026731aba6c331c66&=&format=webp&quality=lossless&width=340&height=472",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954575106773152/img-8.png?ex=66363fe5&is=6634ee65&hm=18e3bfb40b439348e39610d9c9c91c6e255a5a1809a8683dd736f92972bdefb8&=&format=webp&quality=lossless&width=355&height=473",
       //Link1
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979454803607602/img-1.png?ex=66365711&is=66350591&hm=256a2ca50d43744a06b2258f49a078936f5e4a384d9f2f6c78f90cc7b9f10db1&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573139775569/img-1.png?ex=66363fe5&is=6634ee65&hm=095df20f5b8cd7464067b024045243798c713e8316958030fcafaafa11d18dcb&=&format=webp&quality=lossless&width=355&height=473",
       //Link2
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455131025490/img-2.png?ex=66365711&is=66350591&hm=9ad2304a4885405f106d3d59c70324b88ce7d49670b39133535c374254280a6d&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573445693542/img-2.png?ex=66363fe5&is=6634ee65&hm=1d5cd224b8ee31bf9c84075d2638638b58e456583b9c3ea06facff1d5a7f5671&=&format=webp&quality=lossless&width=398&height=473",
       //Link3
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455470768244/img-3.png?ex=66365711&is=66350591&hm=1d1291a9509c3efcd6f937f166851d60afa527d6a485d192786d8ff89faf376a&=&format=webp&quality=lossless&width=341&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573705875486/img-3.png?ex=66363fe5&is=6634ee65&hm=c2ebc90c6c65c6d6bdada848f85a85ba0ad12d0aa931b5540b3003545a3c9630&=&format=webp&quality=lossless&width=424&height=473",
       //Link4
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979455852183552/img-4.png?ex=66365711&is=66350591&hm=ce5a0a43f01bc85c0d9199f68e687345e0902227d83b1811550357c5ad2bba18&=&format=webp&quality=lossless&width=340&height=472",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954573974442046/img-4.png?ex=66363fe5&is=6634ee65&hm=e38d7de10718c80a7c3e757250aaa660c0d20bbc071e94c649601f4f918212b8&=&format=webp&quality=lossless&width=473&height=473",
       //Link5
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979456196378666/img-5.png?ex=66365711&is=66350591&hm=88f2002ccfe564b47b13672ce7682581bc3c6a7c7b0783517396bb39a6f84722&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574221639680/img-5.png?ex=66363fe5&is=6634ee65&hm=b676679618d93c184538f846a2513cd86811931afd04e241a8ed9e8631a3b118&=&format=webp&quality=lossless&width=394&height=473",
       //Link6
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979456686850058/img-6.png?ex=66365711&is=66350591&hm=d07f2a530a6e3e7c967ae2dcdc9e8865f2c6d5a237b525c36722a3049cdb3da2&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574507118632/img-6.png?ex=66363fe5&is=6634ee65&hm=5d3d041a1f9692131d3251a0b66e50b8c2dfb354c7a0423a43df7eb72211cb06&=&format=webp&quality=lossless&width=336&height=472",
       //Link7
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979457022660730/img-7.png?ex=66365711&is=66350591&hm=5d4761bee366552b72bb8e23934d71abc80c22dcfbe2e40492f8b52bfd8e6fa5&=&format=webp&quality=lossless&width=340&height=473",
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954574817230891/img-7.png?ex=66363fe5&is=6634ee65&hm=10742316b31750ac86fa01992786cb3c03a4c0f6b1fea45ec10c26a48d672477&=&format=webp&quality=lossless&width=473&height=473",
       //Link8
-      "https://media.discordapp.net/attachments/1229720027574304900/1235979457416659106/img-8.png?ex=66365712&is=66350592&hm=b2091d2b6e7d0bef10c9ac2f3f552a537ae4734cdf9df15026731aba6c331c66&=&format=webp&quality=lossless&width=340&height=472"
+      "https://media.discordapp.net/attachments/1229720027574304900/1235954575106773152/img-8.png?ex=66363fe5&is=6634ee65&hm=18e3bfb40b439348e39610d9c9c91c6e255a5a1809a8683dd736f92972bdefb8&=&format=webp&quality=lossless&width=355&height=473"
   ];
   links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
