@@ -83,12 +83,45 @@ function shuffleCard() {
   disableDeck = false;
   cardOne = cardTwo = "";
   startTime = null;
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
-  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  let links = [
+//Link1
+"https://media.discordapp.net/attachments/1229720027574304900/1235984010874716190/img-1.png?ex=66365b4f&is=663509cf&hm=c216d49c7aaea2a548622b739b1d5f1d48623cc1dc813c78ceb42c0dd6639288&=&format=webp&quality=lossless&width=399&height=473",
+//Link2
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011180904570/img-2.png?ex=66365b4f&is=663509cf&hm=d5176b0e6b5598db7fd3f42ef5f497c302507c52a12a17f1d67d06a4eda034d8&=&format=webp&quality=lossless&width=473&height=473",
+//Link3
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011449471057/img-3.png?ex=66365b4f&is=663509cf&hm=0160ba0be795a7c788c46d91c0b011d266cc2fdde036049549fe7b87d0afc8ed&=&format=webp&quality=lossless",
+//Link4
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011726160032/img-4.png?ex=66365b4f&is=663509cf&hm=5d00c8101fc5c8d58af4a9c910b2f146c38779f487d50f371caa0b867866607f&=&format=webp&quality=lossless",
+//Link5
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011986210817/img-5.png?ex=66365b4f&is=663509cf&hm=0562de4adb84cde4934d82e9e47b8f016c94b42cefced367c69af20d3962d418&=&format=webp&quality=lossless&width=473&height=473",
+//Link6
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012221222964/img-6.png?ex=66365b4f&is=663509cf&hm=92083f70698f408017546f39b3e7a59407d9a19b5eae6f619a415384dfd841e7&=&format=webp&quality=lossless&width=442&height=473",
+//Link7
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012464357457/img-7.png?ex=66365b50&is=663509d0&hm=35fdcc37f97b84474c65aa9d1f6f6e5055b1113a6b1492501a0aeb5265bade46&=&format=webp&quality=lossless&width=473&height=473",
+//Link8
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012757962833/img-8.png?ex=66365b50&is=663509d0&hm=822569723b0c26fc2c2bb90aaaaee86fbd18ec28348413914841cafb1c792409&=&format=webp&quality=lossless&width=473&height=473",
+//Link1
+"https://media.discordapp.net/attachments/1229720027574304900/1235984010874716190/img-1.png?ex=66365b4f&is=663509cf&hm=c216d49c7aaea2a548622b739b1d5f1d48623cc1dc813c78ceb42c0dd6639288&=&format=webp&quality=lossless&width=399&height=473",
+//Link2
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011180904570/img-2.png?ex=66365b4f&is=663509cf&hm=d5176b0e6b5598db7fd3f42ef5f497c302507c52a12a17f1d67d06a4eda034d8&=&format=webp&quality=lossless&width=473&height=473",
+//Link3
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011449471057/img-3.png?ex=66365b4f&is=663509cf&hm=0160ba0be795a7c788c46d91c0b011d266cc2fdde036049549fe7b87d0afc8ed&=&format=webp&quality=lossless",
+//Link4
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011726160032/img-4.png?ex=66365b4f&is=663509cf&hm=5d00c8101fc5c8d58af4a9c910b2f146c38779f487d50f371caa0b867866607f&=&format=webp&quality=lossless",
+//Link5
+"https://media.discordapp.net/attachments/1229720027574304900/1235984011986210817/img-5.png?ex=66365b4f&is=663509cf&hm=0562de4adb84cde4934d82e9e47b8f016c94b42cefced367c69af20d3962d418&=&format=webp&quality=lossless&width=473&height=473",
+//Link6
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012221222964/img-6.png?ex=66365b4f&is=663509cf&hm=92083f70698f408017546f39b3e7a59407d9a19b5eae6f619a415384dfd841e7&=&format=webp&quality=lossless&width=442&height=473",
+//Link7
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012464357457/img-7.png?ex=66365b50&is=663509d0&hm=35fdcc37f97b84474c65aa9d1f6f6e5055b1113a6b1492501a0aeb5265bade46&=&format=webp&quality=lossless&width=473&height=473",
+//Link8
+"https://media.discordapp.net/attachments/1229720027574304900/1235984012757962833/img-8.png?ex=66365b50&is=663509d0&hm=822569723b0c26fc2c2bb90aaaaee86fbd18ec28348413914841cafb1c792409&=&format=webp&quality=lossless&width=473&height=473"
+  ];
+  links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove("flip");
     let imgTag = card.querySelector(".back-view img");
-    imgTag.src = `./game5_lotr/lotr_images/img-${arr[i]}.png`;
+    imgTag.src = links[i];
 
     card.addEventListener("click", flipCard);
   });
