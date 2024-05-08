@@ -78,6 +78,22 @@
       color: azure;
   
   }
+  #mainMenu{
+    position: absolute;
+    top: 16%; 
+    left: 20px; 
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #000;
+    height: auto;
+    padding: 2px 20px;
+    font-size: 25px;
+    background-color: #270000;
+    border-radius: 5px;
+    color: azure;
+    cursor: pointer;
+    text-decoration: none;
+    }
   #resetButton{
     position: absolute;
     top: 80%;
@@ -90,6 +106,7 @@
     background-color: #270000;
     border-radius: 5px;
     color: azure;
+    cursor: pointer;
   }
   .wrapper{
     padding: 25px;
