@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("https://lh3.googleusercontent.com/pw/AP1GczOF_xY9JWontaOxpeRmCk9oSddAOOxJYoM9iHCbyfQlZFHnrt2IwKl8XPSzqlTotpgfxJty4qj0GdZ2R4o1RzX1DsLBG-NmlRY4iOKd3GCYtmqGZnNBbgbuQ9293pJBSksLJE3GrTy4vACz1RnsMCuV=w1639-h922-s-no-gm?authuser=0");
     background-position: center;
     background-repeat: no-repeat;
@@ -78,6 +78,22 @@
       color: azure;
   
   }
+  #mainMenu{
+    position: absolute;
+    top: 16%; 
+    left: 20px; 
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #000;
+    height: auto;
+    padding: 2px 20px;
+    font-size: 25px;
+    background-color: #aa6e13;
+    border-radius: 5px;
+    color: azure;
+    cursor: pointer;
+    text-decoration: none;
+    }
   #resetButton{
     position: absolute;
     top: 80%;
@@ -90,6 +106,7 @@
     background-color: #aa6e13;
     border-radius: 5px;
     color: azure;
+    cursor: pointer;
   }
   .wrapper{
     padding: 25px;
