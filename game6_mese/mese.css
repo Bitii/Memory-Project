@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    max-height: 100vh;
     background-image: url("https://lh3.googleusercontent.com/pw/AP1GczMEX2OH_9dU220liuKPPG_EGfd2DzhHSKV5rL6e7M02qwPFF7Q44kPFhykfJ_fnRo4k8pFYBKpXMtix6g2FoHQ9UsKtEDbtb3lacN7OZ_lfzYv3hy7M-1hQRstfZv_DdmIKUK-m_TU-UxvJYnLMGygZ=w1475-h922-s-no-gm?authuser=0");
     background-position: center;
     background-repeat: no-repeat;
@@ -76,8 +76,23 @@
       background-color: #0252b9;
       border-radius: 5px;
       color: azure;
-  
-  }
+    }
+    #mainMenu{
+    position: absolute;
+    top: 16%; 
+    left: 20px; 
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #000;
+    height: auto;
+    padding: 2px 20px;
+    font-size: 25px;
+    background-color: #0252b9;
+    border-radius: 5px;
+    color: azure;
+      cursor: pointer;
+      text-decoration: none;
+    }
   #resetButton{
     position: absolute;
     top: 80%;
@@ -222,3 +237,4 @@
   .outlined {
     outline: 2px solid #4CAF50;
   }
+
