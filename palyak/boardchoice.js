@@ -37,7 +37,7 @@ function initBoardChoice() {
       div.addEventListener("click", () => {
         // Létrehoz egy gombot, amikor a div-re kattintanak
         button = document.createElement("button");
-        button.textContent = "Játék indítása";
+        button.textContent = "Game Start";
         button.classList.add("btn");
         button.id = div.id; // Egyedi azonosítót rendel a gombhoz
         document.body.appendChild(button);
