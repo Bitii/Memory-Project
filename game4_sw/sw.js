@@ -85,7 +85,7 @@ function shuffleCard() {
   startTime = null;
   let links = [
     //1
-    "https://lh3.googleusercontent.com/pw/AP1GczOo6FNGuDYQsWTmCmqaLwwfxCq37tor473Q3lfculCBv_qdgwN0-zpQDlhRDwHpuWEf-NQEenoR4kUosspyoDEcbVhYMWSkQIAc6sdfqk14b1fqbXyB-QEiUk929xp5VO2eaG8efdHTnaOldkHlUNKE=w474-h280-s-no-gm?authuser=0",
+    "https://lh3.googleusercontent.com/pw/AP1GczP9gHveKeI5YkoBtBli_DdR40o0e40hCyQfrwJIMX81mttjwscBhXBpu-j6mjqUCOr8Uq39T87PJGfWTsZRQanmwdN8OhiRxV7flP3P0-D-R-cq7ujfn9EnPkvHEyOfBQwVkiGQxsGlBCfOjgTw6uPK=w444-h562-s-no-gm?authuser=0",
     //2
     "https://lh3.googleusercontent.com/pw/AP1GczOUOzBR6nJnFgA3hs4U9-63m2L7SiL-E3RN9xBihUYKLfcjNPC8eBxGg_I68np86weGb6Na10vsFDuboLHWs78QKkNkLMyJ_lIoqUq9ow80anH5lVUyOfKGD_ikhVUnVBBbmXcsxLhQLQUP4wjn66Kw=w427-h584-s-no-gm?authuser=0",
     //3
@@ -101,7 +101,7 @@ function shuffleCard() {
     //8
     "https://lh3.googleusercontent.com/pw/AP1GczMS-kdoN3hNhcQQlEkPF2p1gJ94_GOpqcoC3c9USsHRaWiBmAa2w4EfKHrM0ibbPS2eH3ZoLKtKT_vlXJgP1vh5B5B5ztycbB-M0ZIFHJ1hqInQDr7EAXg8H6kleH5Sh66G9hbnlImfnIsAXJ6_5m8T=w433-h577-s-no-gm?authuser=0",
     //1
-    "https://lh3.googleusercontent.com/pw/AP1GczOo6FNGuDYQsWTmCmqaLwwfxCq37tor473Q3lfculCBv_qdgwN0-zpQDlhRDwHpuWEf-NQEenoR4kUosspyoDEcbVhYMWSkQIAc6sdfqk14b1fqbXyB-QEiUk929xp5VO2eaG8efdHTnaOldkHlUNKE=w474-h280-s-no-gm?authuser=0",
+    "https://lh3.googleusercontent.com/pw/AP1GczP9gHveKeI5YkoBtBli_DdR40o0e40hCyQfrwJIMX81mttjwscBhXBpu-j6mjqUCOr8Uq39T87PJGfWTsZRQanmwdN8OhiRxV7flP3P0-D-R-cq7ujfn9EnPkvHEyOfBQwVkiGQxsGlBCfOjgTw6uPK=w444-h562-s-no-gm?authuser=0",
     //2
     "https://lh3.googleusercontent.com/pw/AP1GczOUOzBR6nJnFgA3hs4U9-63m2L7SiL-E3RN9xBihUYKLfcjNPC8eBxGg_I68np86weGb6Na10vsFDuboLHWs78QKkNkLMyJ_lIoqUq9ow80anH5lVUyOfKGD_ikhVUnVBBbmXcsxLhQLQUP4wjn66Kw=w427-h584-s-no-gm?authuser=0",
     //3
