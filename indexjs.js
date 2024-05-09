@@ -53,9 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initBoardChoice();
   });
-
 });
 
-document.getElementById("exitGame").onclick= function () {
-  window.close();   
-}
+document.getElementById("exitGame").onclick = function () {
+  window.close();
+};

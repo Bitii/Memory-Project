@@ -116,8 +116,8 @@ function shuffleCard() {
     "https://lh3.googleusercontent.com/pw/AP1GczPukATg3jAXCjZDY867BAb-j0ERu2HEc8RaFhFNanja4JN2R5PzQfXGHsINOSkzaT2NIsQyE-mKpzKaSPBf6vFwC3BFeuXF8wmNSWn9XFuXeLzpO46kDX6ltwcDIZxuWBnYihhxHeOhHMjAmhMXo7eu=w500-h375-s-no-gm?authuser=0",
     //8
     "https://lh3.googleusercontent.com/pw/AP1GczM0xrQmwPYspqtjCTkeghtJSin1l4HJSMzQX5WJVgQbE0PMJsAyGkpr5VOp1FmsNkheCx887rn_6QCZxK2ONo_QkQH_CN0O_SPRmPjJEX0tNf8yS0hOvjEir3JkG8DkwisUfisScSz0Fanz8YDFsv0p=w564-h376-s-no-gm?authuser=0",
-    ];
-    links.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  ];
+  links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove("flip");
     let imgTag = card.querySelector(".back-view img");

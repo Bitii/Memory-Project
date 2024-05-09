@@ -10,78 +10,80 @@ const congratsAudio = document.querySelector("#congratsAudio");
 
 let matched = 0;
 let cardOne, cardTwo;
-let disableDeck = true; 
+let disableDeck = true;
 let startTime, elapsedTime, timerInterval;
 
 function startTimer() {
-    if (!startTime) {
-        startTime = Date.now();
-        timerInterval = setInterval(updateTimer, 1000);
-    }
+  if (!startTime) {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000);
+  }
 }
 
 function updateTimer() {
-    elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-    const minutes = Math.floor(elapsedTime / 60);
-    const seconds = elapsedTime % 60;
-    timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+  const minutes = Math.floor(elapsedTime / 60);
+  const seconds = elapsedTime % 60;
+  timerDisplay.textContent = `${minutes < 10 ? "0" : ""}${minutes}:${
+    seconds < 10 ? "0" : ""
+  }${seconds}`;
 }
 
 function stopTimer() {
-    clearInterval(timerInterval);
+  clearInterval(timerInterval);
 }
 
-function flipCard({target: clickedCard}) {
-    if (!disableDeck && cardOne !== clickedCard) {
-        clickedCard.classList.add("flip");
-        if (!cardOne) {
-            cardOne = clickedCard;
-            startTimer(); 
-            return;
-        }
-        cardTwo = clickedCard;
-        disableDeck = true;
-        let cardOneImg = cardOne.querySelector(".back-view img").src,
-        cardTwoImg = cardTwo.querySelector(".back-view img").src;
-        matchCards(cardOneImg, cardTwoImg);
+function flipCard({ target: clickedCard }) {
+  if (!disableDeck && cardOne !== clickedCard) {
+    clickedCard.classList.add("flip");
+    if (!cardOne) {
+      cardOne = clickedCard;
+      startTimer();
+      return;
     }
+    cardTwo = clickedCard;
+    disableDeck = true;
+    let cardOneImg = cardOne.querySelector(".back-view img").src,
+      cardTwoImg = cardTwo.querySelector(".back-view img").src;
+    matchCards(cardOneImg, cardTwoImg);
+  }
 }
 
 function matchCards(img1, img2) {
-    if (img1 === img2) {
-        matched++;
-        if (matched == 8) {
-            stopTimer();
-            audio.pause();
-            congratsAudio.play();
-            congrats.style.display = "block";
-            congratsMsg.innerHTML = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!<br>Újraindításhoz nyomd meg a Reset gombot!`;
-        }
-        cardOne.removeEventListener("click", flipCard);
-        cardTwo.removeEventListener("click", flipCard);
-        cardOne = cardTwo = "";
-        disableDeck = false; 
-    } else {
-        setTimeout(() => {
-            cardOne.classList.add("shake");
-            cardTwo.classList.add("shake");
-        }, 400);
-
-        setTimeout(() => {
-            cardOne.classList.remove("shake", "flip");
-            cardTwo.classList.remove("shake", "flip");
-            cardOne = cardTwo = "";
-            disableDeck = false; 
-        }, 1200);
+  if (img1 === img2) {
+    matched++;
+    if (matched == 8) {
+      stopTimer();
+      audio.pause();
+      congratsAudio.play();
+      congrats.style.display = "block";
+      congratsMsg.innerHTML = `A játékot ${timerDisplay.textContent} másodperc alatt sikerült teljesítened!<br>Újraindításhoz nyomd meg a Reset gombot!`;
     }
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    disableDeck = false;
+  } else {
+    setTimeout(() => {
+      cardOne.classList.add("shake");
+      cardTwo.classList.add("shake");
+    }, 400);
+
+    setTimeout(() => {
+      cardOne.classList.remove("shake", "flip");
+      cardTwo.classList.remove("shake", "flip");
+      cardOne = cardTwo = "";
+      disableDeck = false;
+    }, 1200);
+  }
 }
 
 function shuffleCard() {
-    matched = 0;
-    disableDeck = false;
-    cardOne = cardTwo = "";
-    startTime = null;
-    let links = [
+  matched = 0;
+  disableDeck = false;
+  cardOne = cardTwo = "";
+  startTime = null;
+  let links = [
     //1
     "https://lh3.googleusercontent.com/pw/AP1GczN_DGBrqkA4P_8V_6DrNOnIqR_ENUiPAqCRvyGyHCBuKdeNhvGk9dO7xXR5XyaYBQcxfeZ6_y-5ClW8fNCODN_TuxGeXz7tptrcmZ_vRr7lpLtXHSx-Lx62CnZSZW_4zUdRMxohl7uZgXySecgajagzNAAMm_ei3sNnXBOCVzWbSzgBaFy4IiHR3F70QkOEQ8EGcrkHLIdpd-pIx6I93-F8hX45mpO1W5dcHj_op6NM0kf3pgaCJlsppinQesHHaeVq2KEbQnzkOwEY63aJCIajoL85ATp6wcsshN1hg-XEZ9KVbnPBdwlYCxkoWG6rrYCIiRQHlmA2f0JAWPKwdycfzYa5-VgIfDR6ZVVC9OhyLRIAUVTRtnxifS12qq2p4sU5-tpAL5cEMLEL-9F6yF7vzDFGO7_LXllnG4BHVRtKvGoSbvNbmSzjRG1gbBDSq_y5HoxtNzBDT8m8wjwadmvE_wTO0O3b7Vz9zs6XYhiPJMG3pgQnl-Uxm5XPHEM7nFHqkg_HN7L9WZmKnHdYvjcr9TRA2vH88z6tjJG1VMevKSHVCaGZqdX-wr7mZSuIghMl27rDa5o9O-1gPDqjEP-_1n8aIcqgoDGC7g43B1sN11HqTW6csRBdqqbAZHHn0LiICHFKAOGh2-k5PzmioBZmdjcsvvdptKfu_c0AMlYCCFNOR9ACjVC-YM_gZjcjZZRnCku3pNMRc9Z8vi8Rk1rbY2k-3H-aCV7THFWSGzZ0BrW928jPlYSUWA34uJWHtCqc8768ZE1CibHfvzcYe6tqzKDtSVJEd8YBMrOVeCj1oHBUFu2ZhZ36DjZXF8floIn8LEV4Ep4asZfOArK_lNUZCStwh49lho9zq7J4sZ8E2F8XIRDp6Lh4UVfX8PAM8Tc2uF-xuwGiRYVxVRXla4GmAGpQTTneMr0CWxImCsYAa2J8d7-yMWQSwYPp=w563-h375-s-no-gm?authuser=1",
     //2
@@ -97,9 +99,9 @@ function shuffleCard() {
     //7
     "https://lh3.googleusercontent.com/pw/AP1GczM8IYj7Y7Ma6TiiJpupYlZ2HCs8SK5H69fjiQ9Lg2jHK4gfyUApr2Zh-35tnnyhYVotLXHsui-7EMm0ysxcAhTGmr1AfrabxHVVDDR61K-3F3lKRyLEHvv058YAqxMkpJLRIDEpM3v4C9TJS7z3PtaUmBzNcMw5DryAfvgq-QbFw0zA4rI6qfBdodaJCqMtGWw582M1a9_rKVu83iMm1q4NjhbI74O5Q4vAUgjut_p8-0E2koU1AsO3t246uajVYfup9s7gjk-NMGVfsY1cISZ_GoF3HxvWEUedA83aFRQGxkPlo5s-vZziNBAp_1okKgUesZi56WVGn0Ugjo0ZevvNka_HUN25A1nnk17TgzklPDyu8E9QD_u1KM-6gAi3YQVfbMqDhUqbwHo5UiCgC_eO-3axh5lLcZ_LTGlOS5hDB1EPp-9v0n9_H5oxbZ8cH06haYs1qR_oI8KlVHImXUAom14YmXi4IpVeS8GduxrDqv5jhwv-MvOcPvOelx4O14swJJPejAmnc5CYQaRERFumtMdaf0R9YEfEzAcJtjpcabsTrfVQKB8mRJJr_6NXEQuLegKf14gQVVJWHE0QgwAwYsHg2R1I9ajBHF8hGceXdT7bHbyLN6yn6k5JAgGN1qHK_8aZfag9IVIs2aspDeaLXnXXz0kb4px8o4pxNOhAu-F4g6So8oPAzS8DC3Wr0dm81IPISLlrbwc40j5afAgyttbtPDWyMZQr83SWJBtOXIn-hfTJzjOZ779PaPLywoPJbP4__EOo1lB0eqf8IlRZvLmkfCdmVZqGa1FP6OzREs4qIAG6EtAlorlEr2u9h53L-bdLR1NPEa-2uo6q1M4c4Bg66wwPzcMcmGMn7NiLBgGcuXtPiy5qc2729S9OENCYS3zN6g_TdidSxsfoQRMBhTMLpUSCA2eT_wH8_TE_HvLeEV0dCar-GwrB=w433-h577-s-no-gm?authuser=1",
     //8
-      "https://lh3.googleusercontent.com/pw/AP1GczOWt4QvXdeP06vfgqciRAnfNPEyqY1GlPtaXEncLf6G4Dn8Aq8MAdw5PEMfH1dDdPEOg7FQQ8nxQIZtXPnhn3r5vyGp6AQFkiY0KDj8NyfPdBScCyAc0Cj73BO7d4ddBKzW7Xl3-FUZ7UbfhDjoyHETd0dvANnE9GMAPLzLIT0SoLszHcJlRr7c8RNl3EHJ7OMHUsO_BZlKYP2z8epoe1XpHyyZ_Q3ZlJ6m3farKnD24pBpJxRInXo0vodb5lfALATovk0Sj7BXWLmV9hUDUd3ZfmHmH-o_RujwQ7TMSJIRI8Rr1f2vcySTB5W4kTX2AxVHP04Fy0HHvBwQu9bOMkv3D8EPG0N2xivAgPBpeVLq8E7ryZD3krYvAo7U0jjjnwQKVUVxhq-BvqrQGcGLVd--MNC-9VltomJz5oG8oG2mdvRyMxzm664zzr6RGQMONXXBxkqOGZ9DdU8KbCAcmOfvkGX-n7mqcGfyGRjpNyqNaZrYDikUcmW6bCMtbw-VJNaRtzQRhqb_PjOLvtsKOeW3kPN3RaGxrLQOLuhv-uLuxtndU0E_vg3OCWelv_0uxqpQ3D9bzsaWHYFqkTb2qCW8KRFQi5mqePzXlUtx8GIabaLAUShu84G2cXYXgtKWrQt5TjtRKUprPwlxYKBt-k2HWgx_zNYvaUhnHpAu0zK8CpM7I6MPsMEHA15ogFRea6xW4mnZtk4yZyztd9Pct4fhEUSK9kyepAgUWG4TzFJlShk8x3W8VHZTNP1nAy0lpWfE1325jkyoAMKOdhXomJKL8aSp2dItCK7YXmkmDBmvI6EgZtDnmcttqMzU3rPiG87slmHrPjHwdBYsvzwuCc4uUlaOMlMtoB4_ENjqdDJF3XfSmCFMAKBiJYz7hFvkPdshroUGy1OvUY6D1juHw0XLjRN9DS_OfDuZosx5miU4N7ah12rXc5WP-PJx=w432-h577-s-no-gm?authuser=1",
+    "https://lh3.googleusercontent.com/pw/AP1GczOWt4QvXdeP06vfgqciRAnfNPEyqY1GlPtaXEncLf6G4Dn8Aq8MAdw5PEMfH1dDdPEOg7FQQ8nxQIZtXPnhn3r5vyGp6AQFkiY0KDj8NyfPdBScCyAc0Cj73BO7d4ddBKzW7Xl3-FUZ7UbfhDjoyHETd0dvANnE9GMAPLzLIT0SoLszHcJlRr7c8RNl3EHJ7OMHUsO_BZlKYP2z8epoe1XpHyyZ_Q3ZlJ6m3farKnD24pBpJxRInXo0vodb5lfALATovk0Sj7BXWLmV9hUDUd3ZfmHmH-o_RujwQ7TMSJIRI8Rr1f2vcySTB5W4kTX2AxVHP04Fy0HHvBwQu9bOMkv3D8EPG0N2xivAgPBpeVLq8E7ryZD3krYvAo7U0jjjnwQKVUVxhq-BvqrQGcGLVd--MNC-9VltomJz5oG8oG2mdvRyMxzm664zzr6RGQMONXXBxkqOGZ9DdU8KbCAcmOfvkGX-n7mqcGfyGRjpNyqNaZrYDikUcmW6bCMtbw-VJNaRtzQRhqb_PjOLvtsKOeW3kPN3RaGxrLQOLuhv-uLuxtndU0E_vg3OCWelv_0uxqpQ3D9bzsaWHYFqkTb2qCW8KRFQi5mqePzXlUtx8GIabaLAUShu84G2cXYXgtKWrQt5TjtRKUprPwlxYKBt-k2HWgx_zNYvaUhnHpAu0zK8CpM7I6MPsMEHA15ogFRea6xW4mnZtk4yZyztd9Pct4fhEUSK9kyepAgUWG4TzFJlShk8x3W8VHZTNP1nAy0lpWfE1325jkyoAMKOdhXomJKL8aSp2dItCK7YXmkmDBmvI6EgZtDnmcttqMzU3rPiG87slmHrPjHwdBYsvzwuCc4uUlaOMlMtoB4_ENjqdDJF3XfSmCFMAKBiJYz7hFvkPdshroUGy1OvUY6D1juHw0XLjRN9DS_OfDuZosx5miU4N7ah12rXc5WP-PJx=w432-h577-s-no-gm?authuser=1",
 
-      //1
+    //1
     "https://lh3.googleusercontent.com/pw/AP1GczN_DGBrqkA4P_8V_6DrNOnIqR_ENUiPAqCRvyGyHCBuKdeNhvGk9dO7xXR5XyaYBQcxfeZ6_y-5ClW8fNCODN_TuxGeXz7tptrcmZ_vRr7lpLtXHSx-Lx62CnZSZW_4zUdRMxohl7uZgXySecgajagzNAAMm_ei3sNnXBOCVzWbSzgBaFy4IiHR3F70QkOEQ8EGcrkHLIdpd-pIx6I93-F8hX45mpO1W5dcHj_op6NM0kf3pgaCJlsppinQesHHaeVq2KEbQnzkOwEY63aJCIajoL85ATp6wcsshN1hg-XEZ9KVbnPBdwlYCxkoWG6rrYCIiRQHlmA2f0JAWPKwdycfzYa5-VgIfDR6ZVVC9OhyLRIAUVTRtnxifS12qq2p4sU5-tpAL5cEMLEL-9F6yF7vzDFGO7_LXllnG4BHVRtKvGoSbvNbmSzjRG1gbBDSq_y5HoxtNzBDT8m8wjwadmvE_wTO0O3b7Vz9zs6XYhiPJMG3pgQnl-Uxm5XPHEM7nFHqkg_HN7L9WZmKnHdYvjcr9TRA2vH88z6tjJG1VMevKSHVCaGZqdX-wr7mZSuIghMl27rDa5o9O-1gPDqjEP-_1n8aIcqgoDGC7g43B1sN11HqTW6csRBdqqbAZHHn0LiICHFKAOGh2-k5PzmioBZmdjcsvvdptKfu_c0AMlYCCFNOR9ACjVC-YM_gZjcjZZRnCku3pNMRc9Z8vi8Rk1rbY2k-3H-aCV7THFWSGzZ0BrW928jPlYSUWA34uJWHtCqc8768ZE1CibHfvzcYe6tqzKDtSVJEd8YBMrOVeCj1oHBUFu2ZhZ36DjZXF8floIn8LEV4Ep4asZfOArK_lNUZCStwh49lho9zq7J4sZ8E2F8XIRDp6Lh4UVfX8PAM8Tc2uF-xuwGiRYVxVRXla4GmAGpQTTneMr0CWxImCsYAa2J8d7-yMWQSwYPp=w563-h375-s-no-gm?authuser=1",
     //2
     "https://lh3.googleusercontent.com/pw/AP1GczO_GoiPJ3-rPj0AMtmfyx-hkBSdlq0aY1BvFWxnIAir7d1I8rTbx4DOYoqWNGRcduYmegwK31kFnsxqLWZD_wHQJT8xmT4Izr62nzrmda8aoZMPaiFIs2hdJDp-cyGN5TphvNTHOxHa0599tLSVG2-dpRuj_riucygVCij-DRwSzXu3I1zQmJ6l3jQXbg9J4PYIpR8wFIEkIxIq80etMoA-a59kxZ0ztxU8hAxMZep8qqBR7H_FeiRhn5JXBFViNqis_yBFMy-9vDn08iEqCe8pmVAX8oAlyUPTs4q55-VcNyTA6ZC-yM09KuZlUSzpVeUewiUW4IJxVserQ8wNKqp0m8GhksDH1Q6PI29L-PvjHtKprHPvIhjmOySPcagwBp1tAo6cChf08a-Eq0c6uJYRIh1AGL01UzEVRnV0NEb_cdTmYU_RghzOmyN3CVEMrvXHbLtEi1HmznIOHj2MhN7jx6VjoJxkBeXpG3t5uHs0OsnqpyZU73TMvQPRd4XnNpI9VYjdl5FExMcFLMKMFfPuMyUNuTo4J8LivYkZScdOG5naoAK8h9-ydlXVsAqfvAJLUjjkiFz8GllNt-CZIsK-WaSvxlZq89tJ6zVd8R4iARXm5ySvHTVXjHKstzWmOEckZcrjMF0t0ddtLibW51Txgao_-AvQidJurZA2sfVvpnGadRj4VDXAUkrfWcih2DS_yMOqrm-KgQo-7c1bb_3inSjZjIeGrhntQJMu_Rb2kMEuhvLBjxOqXuAu-oAH23FyNIjiHPwCYIQgTbuhTVAgLpdA0JdSl3PS5Mos5zUoueGMkyKo5QyKONZYg-K2ZcetZhPLQZiP4XTDcU7mjLKclbtmhQcsKv8rI6dVkD4hWobSPEj-kmxtDfQQ84bYHo0Lqg3ZmcYv9fWM1ybBYDCbQwTSlYyOIaPEuLeRngJQalJX5g7srtO_HV_1=w500-h500-s-no-gm?authuser=1",
@@ -114,9 +116,9 @@ function shuffleCard() {
     //7
     "https://lh3.googleusercontent.com/pw/AP1GczM8IYj7Y7Ma6TiiJpupYlZ2HCs8SK5H69fjiQ9Lg2jHK4gfyUApr2Zh-35tnnyhYVotLXHsui-7EMm0ysxcAhTGmr1AfrabxHVVDDR61K-3F3lKRyLEHvv058YAqxMkpJLRIDEpM3v4C9TJS7z3PtaUmBzNcMw5DryAfvgq-QbFw0zA4rI6qfBdodaJCqMtGWw582M1a9_rKVu83iMm1q4NjhbI74O5Q4vAUgjut_p8-0E2koU1AsO3t246uajVYfup9s7gjk-NMGVfsY1cISZ_GoF3HxvWEUedA83aFRQGxkPlo5s-vZziNBAp_1okKgUesZi56WVGn0Ugjo0ZevvNka_HUN25A1nnk17TgzklPDyu8E9QD_u1KM-6gAi3YQVfbMqDhUqbwHo5UiCgC_eO-3axh5lLcZ_LTGlOS5hDB1EPp-9v0n9_H5oxbZ8cH06haYs1qR_oI8KlVHImXUAom14YmXi4IpVeS8GduxrDqv5jhwv-MvOcPvOelx4O14swJJPejAmnc5CYQaRERFumtMdaf0R9YEfEzAcJtjpcabsTrfVQKB8mRJJr_6NXEQuLegKf14gQVVJWHE0QgwAwYsHg2R1I9ajBHF8hGceXdT7bHbyLN6yn6k5JAgGN1qHK_8aZfag9IVIs2aspDeaLXnXXz0kb4px8o4pxNOhAu-F4g6So8oPAzS8DC3Wr0dm81IPISLlrbwc40j5afAgyttbtPDWyMZQr83SWJBtOXIn-hfTJzjOZ779PaPLywoPJbP4__EOo1lB0eqf8IlRZvLmkfCdmVZqGa1FP6OzREs4qIAG6EtAlorlEr2u9h53L-bdLR1NPEa-2uo6q1M4c4Bg66wwPzcMcmGMn7NiLBgGcuXtPiy5qc2729S9OENCYS3zN6g_TdidSxsfoQRMBhTMLpUSCA2eT_wH8_TE_HvLeEV0dCar-GwrB=w433-h577-s-no-gm?authuser=1",
     //8
-      "https://lh3.googleusercontent.com/pw/AP1GczOWt4QvXdeP06vfgqciRAnfNPEyqY1GlPtaXEncLf6G4Dn8Aq8MAdw5PEMfH1dDdPEOg7FQQ8nxQIZtXPnhn3r5vyGp6AQFkiY0KDj8NyfPdBScCyAc0Cj73BO7d4ddBKzW7Xl3-FUZ7UbfhDjoyHETd0dvANnE9GMAPLzLIT0SoLszHcJlRr7c8RNl3EHJ7OMHUsO_BZlKYP2z8epoe1XpHyyZ_Q3ZlJ6m3farKnD24pBpJxRInXo0vodb5lfALATovk0Sj7BXWLmV9hUDUd3ZfmHmH-o_RujwQ7TMSJIRI8Rr1f2vcySTB5W4kTX2AxVHP04Fy0HHvBwQu9bOMkv3D8EPG0N2xivAgPBpeVLq8E7ryZD3krYvAo7U0jjjnwQKVUVxhq-BvqrQGcGLVd--MNC-9VltomJz5oG8oG2mdvRyMxzm664zzr6RGQMONXXBxkqOGZ9DdU8KbCAcmOfvkGX-n7mqcGfyGRjpNyqNaZrYDikUcmW6bCMtbw-VJNaRtzQRhqb_PjOLvtsKOeW3kPN3RaGxrLQOLuhv-uLuxtndU0E_vg3OCWelv_0uxqpQ3D9bzsaWHYFqkTb2qCW8KRFQi5mqePzXlUtx8GIabaLAUShu84G2cXYXgtKWrQt5TjtRKUprPwlxYKBt-k2HWgx_zNYvaUhnHpAu0zK8CpM7I6MPsMEHA15ogFRea6xW4mnZtk4yZyztd9Pct4fhEUSK9kyepAgUWG4TzFJlShk8x3W8VHZTNP1nAy0lpWfE1325jkyoAMKOdhXomJKL8aSp2dItCK7YXmkmDBmvI6EgZtDnmcttqMzU3rPiG87slmHrPjHwdBYsvzwuCc4uUlaOMlMtoB4_ENjqdDJF3XfSmCFMAKBiJYz7hFvkPdshroUGy1OvUY6D1juHw0XLjRN9DS_OfDuZosx5miU4N7ah12rXc5WP-PJx=w432-h577-s-no-gm?authuser=1",
+    "https://lh3.googleusercontent.com/pw/AP1GczOWt4QvXdeP06vfgqciRAnfNPEyqY1GlPtaXEncLf6G4Dn8Aq8MAdw5PEMfH1dDdPEOg7FQQ8nxQIZtXPnhn3r5vyGp6AQFkiY0KDj8NyfPdBScCyAc0Cj73BO7d4ddBKzW7Xl3-FUZ7UbfhDjoyHETd0dvANnE9GMAPLzLIT0SoLszHcJlRr7c8RNl3EHJ7OMHUsO_BZlKYP2z8epoe1XpHyyZ_Q3ZlJ6m3farKnD24pBpJxRInXo0vodb5lfALATovk0Sj7BXWLmV9hUDUd3ZfmHmH-o_RujwQ7TMSJIRI8Rr1f2vcySTB5W4kTX2AxVHP04Fy0HHvBwQu9bOMkv3D8EPG0N2xivAgPBpeVLq8E7ryZD3krYvAo7U0jjjnwQKVUVxhq-BvqrQGcGLVd--MNC-9VltomJz5oG8oG2mdvRyMxzm664zzr6RGQMONXXBxkqOGZ9DdU8KbCAcmOfvkGX-n7mqcGfyGRjpNyqNaZrYDikUcmW6bCMtbw-VJNaRtzQRhqb_PjOLvtsKOeW3kPN3RaGxrLQOLuhv-uLuxtndU0E_vg3OCWelv_0uxqpQ3D9bzsaWHYFqkTb2qCW8KRFQi5mqePzXlUtx8GIabaLAUShu84G2cXYXgtKWrQt5TjtRKUprPwlxYKBt-k2HWgx_zNYvaUhnHpAu0zK8CpM7I6MPsMEHA15ogFRea6xW4mnZtk4yZyztd9Pct4fhEUSK9kyepAgUWG4TzFJlShk8x3W8VHZTNP1nAy0lpWfE1325jkyoAMKOdhXomJKL8aSp2dItCK7YXmkmDBmvI6EgZtDnmcttqMzU3rPiG87slmHrPjHwdBYsvzwuCc4uUlaOMlMtoB4_ENjqdDJF3XfSmCFMAKBiJYz7hFvkPdshroUGy1OvUY6D1juHw0XLjRN9DS_OfDuZosx5miU4N7ah12rXc5WP-PJx=w432-h577-s-no-gm?authuser=1",
   ];
-    links.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove("flip");
     let imgTag = card.querySelector(".back-view img");
@@ -124,43 +126,43 @@ function shuffleCard() {
 
     card.addEventListener("click", flipCard);
   });
-  }
+}
 
 function resetGame() {
-    clearInterval(timerInterval);
-    shuffleCard();
-    timerDisplay.textContent = "00:00"; 
+  clearInterval(timerInterval);
+  shuffleCard();
+  timerDisplay.textContent = "00:00";
 }
 
 resetButton.addEventListener("click", resetGame);
 resetButton.addEventListener("click", function () {
-    congrats.style.display = "none";
+  congrats.style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", shuffleCard);
 
 //play gomb alapértelmezett körvonal hozzáadása -> zene automatikus lejátszása miatt
 window.onload = function () {
-    play.classList.add("outlined");
-}
+  play.classList.add("outlined");
+};
 
 // zene lejátszása és megállítása
-play.addEventListener("click", function () { 
-    audio.play();
+play.addEventListener("click", function () {
+  audio.play();
 });
 
-pause.addEventListener("click", function () { 
-    audio.pause();
+pause.addEventListener("click", function () {
+  audio.pause();
 });
 
 // play gomb megnyomásakor megjelenik a körvonal, pause gombról eltűnik
-audio.onplay = function() {
-    play.classList.add("outlined");
-    pause.classList.remove("outlined");
+audio.onplay = function () {
+  play.classList.add("outlined");
+  pause.classList.remove("outlined");
 };
 
 // pause gomb megnyomásakor megjelenik a körvonal, play gombról eltűnik
-audio.onpause = function() {
-    play.classList.remove("outlined");
-    pause.classList.add("outlined");
+audio.onpause = function () {
+  play.classList.remove("outlined");
+  pause.classList.add("outlined");
 };

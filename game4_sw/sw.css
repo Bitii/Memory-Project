@@ -78,7 +78,7 @@ body {
   color: azure;
 }
 
-#mainMenu{
+#mainMenu {
   position: absolute;
   top: 16%; /* Állítsd be a kívánt távolságot a tetejétől */
   left: 20px; /* Állítsd be a kívánt távolságot a jobb oldalától */
@@ -264,4 +264,3 @@ body {
 #congrats p {
   font-size: 18px;
 }
-

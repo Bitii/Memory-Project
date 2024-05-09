@@ -116,7 +116,7 @@ function shuffleCard() {
     "https://lh3.googleusercontent.com/pw/AP1GczPjy4sW7YUR_FAgrKYvqC7pApfYhizyUUud_XL2I54LUp7fNUoQCzlEFZ1Jn7-zHx7xnaLdSpdKaM2ffXW_jWSBthROwiPhQkWPKDe33OUvHcBtwuj24Yn_UrPK3xrVSuA0ZhLcYrsmKDO50LmOYTsH=w623-h866-s-no-gm?authuser=0",
     //8
     "https://lh3.googleusercontent.com/pw/AP1GczMBx0JswZi1qPfJHj5nnoaaRlxldnhy6wcB_5h6G3r2P7yf0tuI7e3hpFkFLd9FBfEwvqfRsYzvDaFSs3IeoKw1rXP9CZxMQFIRJdiq8WivgydYKm7qn9WhtLy-Lf4zDZGtBPNVKGHckwg16EMMI6en=w623-h866-s-no-gm?authuser=0",
-       ];
+  ];
   links.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove("flip");
